@@ -5,9 +5,16 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile.dev
     ports:
-      - "8080:8080"
+      - "0.0.0.0:8080:8080"
+    networks:
+      - simplon-net
 
-  texttests:
-    build:
-      context: .
-      dockerfile: ./docker/Dockerfile.test
+#  texttests:
+#    build:
+#      context: .
+#      dockerfile: ./docker/Dockerfile.test
+#    networks:
+#      - simplon-net
+
+networks:
+  simplon-net:
